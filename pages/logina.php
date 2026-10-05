@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Seioa asi</title>
-  <link rel="stylesheet" href="../css/login.css">
+  <link rel="stylesheet" href="../css/logina.css">
 </head>
 
 <body>
@@ -14,6 +14,7 @@
   <!--LOGOA-->
     <img src="../data/images/logosant.png" alt="LHFP Santurtzi">     
     <h1>Saioa asi</h1>
+
   <!--SAIOA ASI-->
     <form action="login.php" method="post">
       <label for="user">Erabiltzailea</label>

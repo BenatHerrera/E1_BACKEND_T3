@@ -13,6 +13,6 @@ function requireAdmin() {
     requireLogin();
     if ($_SESSION['user']['rola'] !== 'admin') {
         http_response_code(403);
-        exit('No tienes permiso');
+        exit('Baimenik ez');
     }
 }
