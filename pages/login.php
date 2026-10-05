@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar sesión</title>
+  <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+  <main class="login">
+    <img src="../data/images/logosant.png" alt="LHFP Santurtzi"> 
+    <h1>Saioa asi</h1>
+
+    <form action="login.php" method="post">
+      <label for="user">Erabiltzailea</label>
+      <input type="user" id="user" name="user" placeholder="Sartu erabiltzailea" autocomplete="username" required>
+
+      <label for="password">Pasahitza</label>
+      <input type="password" id="password" name="password" placeholder="Sartu pasahitza" autocomplete="current-password" required>
+
+      <button type="submit">Sartu</button>
+    </form>
+
+  </main>
+</body>
+</html>
