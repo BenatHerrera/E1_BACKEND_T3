@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gelak</title>
+  <link rel="stylesheet" href="css/estiloak.css">
+</head>
+<body>
+  <header class="goiburua">
+    <a href="dashboard.html">← Hasiera</a>
+    <h1>Gelak</h1>
+  </header>
+
+  <main class="edukia">
+    <form id="form" novalidate>
+      <input type="hidden" id="id">
+      <label for="izena">Izena</label>
+      <input type="text" id="izena" maxlength="100" placeholder="Adib. Biltegia" required>
+      <label for="taldea">Taldea</label>
+      <input type="text" id="taldea" maxlength="100" placeholder="Aukerakoa">
+      <p id="errorea" class="errorea" role="alert"></p>
+      <button type="submit" id="gorde">Gehitu</button>
+      <button type="button" id="utzi" class="bigarrena" hidden>Utzi</button>
+    </form>
+
+    <table>
+      <thead><tr><th>ID</th><th>Izena</th><th>Taldea</th><th>Ekintzak</th></tr></thead>
+      <tbody id="taula"></tbody>
+    </table>
+  </main>
+
+  <script type="module" src="js/gelak.js"></script>
+</body>
+</html>
