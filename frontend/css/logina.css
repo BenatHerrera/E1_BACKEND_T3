@@ -133,6 +133,12 @@ button:focus-visible {
   outline-offset: 3px;
 }
 
+.errorea {
+  
+  color: #b3364a;
+  
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     transition: none !important;
