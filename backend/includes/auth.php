@@ -1,18 +1,28 @@
 <?php
-session_start();
-require_once __DIR__ . '/datubasea.php';
+require_once __DIR__ . '/../config/cors.php';
+require_once __DIR__ . '/../config/datubasea.php';
 
-function requireLogin() {
+session_set_cookie_params([
+    'httponly' => true,
+    'samesite' => 'Lax',
+]);
+session_start();
+
+function json($data, int $code = 200): void {
+    http_response_code($code);
+    echo json_encode($data, JSON_UNESCAPED_UNICODE);
+    exit;
+}
+
+function requireLogin(): void {
     if (empty($_SESSION['user'])) {
-        header('Location: /logina.php');
-        exit;
+        json(['error' => 'Saioa hasi behar da'], 401);
     }
 }
 
-function requireAdmin() {
+function requireAdmin(): void {
     requireLogin();
-    if ($_SESSION['user']['rola'] !== 'admin') {
-        http_response_code(403);
-        exit('Baimenik ez');
+    if ($_SESSION['user']['rol'] !== 'admin') {
+        json(['error' => 'Baimenik ez'], 403);
     }
 }
