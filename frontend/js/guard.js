@@ -5,5 +5,6 @@ export async function guard() {
     return await api('me.php');
   } catch {
     location.href = 'index.html';
+    return new Promise(() => {});
   }
 }

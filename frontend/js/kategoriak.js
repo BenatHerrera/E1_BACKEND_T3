@@ -1,7 +1,8 @@
+import { nabigazioa } from './nav.js';
 import { api } from './api.js';
 import { guard } from './guard.js';
 
-await guard();
+nabigazioa(await guard());
 
 const form = document.getElementById('form');
 const idInput = document.getElementById('id');

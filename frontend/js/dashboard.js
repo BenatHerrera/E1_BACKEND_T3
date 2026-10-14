@@ -1,14 +1,8 @@
-import { api } from './api.js';
+import { guard } from './guard.js';
+import { nabigazioa } from './nav.js';
 
-try {
-  const user = await api('me.php');
-  document.getElementById('izena').textContent = user.username;
-  document.getElementById('rola').textContent = 'Rola: ' + user.rol;
-} catch (err) {
-  location.href = 'index.html';
-}
+const user = await guard();
+nabigazioa(user);
 
-document.getElementById('logout').addEventListener('click', async () => {
-  await api('logout.php', { method: 'POST' });
-  location.href = 'index.html';
-});
+document.getElementById('izena').textContent = user.username;
+document.getElementById('rola').textContent = 'Rola: ' + user.rol;
