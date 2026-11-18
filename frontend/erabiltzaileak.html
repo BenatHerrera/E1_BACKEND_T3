@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Erabiltzaileak</title>
+  <link rel="stylesheet" href="css/estiloak.css">
+</head>
+<body>
+  <header class="goiburua">
+    <a href="dashboard.html">← Hasiera</a>
+    <h1>Erabiltzaileak</h1>
+  </header>
+
+  <main class="edukia">
+    <form id="form" novalidate>
+      <input type="hidden" id="id">
+      <label for="izena">Izena</label>
+      <input type="text" id="izena" maxlength="100" placeholder="Adib. Ane Garcia" required>
+
+      <label for="erabiltzailea">Erabiltzailea</label>
+      <input type="text" id="erabiltzailea" maxlength="50" placeholder="Adib. ane" required>
+
+      <label for="pasahitza">Pasahitza</label>
+      <input type="password" id="pasahitza" minlength="6" placeholder="Gutxienez 6 karaktere">
+      <small id="pasahitzaOharra">Berria sortzeko derrigorrezkoa. Editatzean, hutsik utzi aldatzeko.</small>
+
+      <label for="rola">Rola</label>
+      <select id="rola" required>
+        <option value="user">user</option>
+        <option value="admin">admin</option>
+      </select>
+
+      <p id="errorea" class="errorea" role="alert"></p>
+      <button type="submit" id="gorde">Gehitu</button>
+      <button type="button" id="utzi" class="bigarrena" hidden>Utzi</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr><th>ID</th><th>Izena</th><th>Erabiltzailea</th><th>Rola</th><th>Ekintzak</th></tr>
+      </thead>
+      <tbody id="taula"></tbody>
+    </table>
+  </main>
+
+  <script type="module" src="js/erabiltzaileak.js"></script>
+</body>
+</html>

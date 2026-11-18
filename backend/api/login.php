@@ -13,9 +13,13 @@ if ($user === '' || $pass === '' || strlen($user) > 50) {
     json(['error' => 'Datuak baliogabeak'], 422);
 }
 
-$stmt = $pdo->prepare('SELECT id, username, pasahitza, rol FROM erabiltzaileak WHERE username = ?');
-$stmt->execute([$user]);
-$row = $stmt->fetch();
+try {
+    $stmt = $pdo->prepare('SELECT id, username, pasahitza, rol FROM erabiltzaileak WHERE username = ?');
+    $stmt->execute([$user]);
+    $row = $stmt->fetch();
+} catch (PDOException $e) {
+    json(['error' => 'Datu-baseko errorea: ' . $e->getMessage()], 500);
+}
 
 if (!$row || !password_verify($pass, $row['pasahitza'])) {
     json(['error' => 'Erabiltzaile edo pasahitz okerra'], 401);

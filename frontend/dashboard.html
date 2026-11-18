@@ -4,16 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hasiera</title>
-  <link rel="stylesheet" href="css/logina.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="css/dashboard.css">
 </head>
 <body>
-  <main class="login">
-    <h1>Kaixo, <span id="izena">...</span></h1>
-    <p id="rola" style="text-align:center"></p>
-    <p style="text-align:center"><a href="gelak.html">Gelak</a></p>
-    <p style="text-align:center"><a href="kategoriak.html">Kategoriak</a></p>
-    <button id="logout" type="button">Saioa itxi</button>
-  </main>
+  <aside class="alboa" id="alboa"></aside>
+
+  <div class="nagusia">
+    <header class="goiburua" id="goiburua"></header>
+
+    <section class="txartelak">
+      <div class="txartela"><span>Ekipamendu motak</span><strong id="statMotak">–</strong></div>
+      <div class="txartela"><span>Unitateak (stock)</span><strong id="statUnitateak">–</strong></div>
+      <div class="txartela"><span>Gelak</span><strong id="statGelak">–</strong></div>
+      <div class="txartela"><span>Inbentariatuta</span><strong id="statInbentariatuta">–</strong></div>
+    </section>
+
+    <h2>Azken erosketak</h2>
+    <div class="taula-kutxa">
+      <table>
+        <thead><tr><th>Data</th><th>Ekipamendua</th><th>Kopurua</th><th>Stock berria</th></tr></thead>
+        <tbody id="erosketak"></tbody>
+      </table>
+    </div>
+  </div>
+
   <script type="module" src="js/dashboard.js"></script>
 </body>
 </html>
